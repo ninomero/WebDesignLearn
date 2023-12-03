@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Reveal Tutorial</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- section01 -->
+    <section class="sec-01">
+        <div class="container">
+            <h2 class="main-title">Scroll Reveal Tutorial</h2>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/img1.jpg" alt="">
+                </div>
+                <div class="text-box">
+                    <h3>N Code</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptates, autem animi corrupti
+                        eligendi sit amet veritatis reprehenderit in iure.</p>
+                </div>
+            </div>
+            <div class="media-icons">
+                <a href="#" class="icon"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-instagram'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-twitter'></i></a>
+                <a href="#" class="icon"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- section02 -->
+    <section class="sec-02">
+        <div class="container">
+            <h3 class="section-title">N Tutorial</h3>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/img2.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h4 class="info-title">Description</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur modi quasi porro. Totam, sint
+                        recusandae sit a qui voluptas quae ipsa ea esse soluta modi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section03 -->
+    <section class="sec-03">
+        <div class="container">
+            <h3 class="section-title">N Code</h3>
+            <div class="content">
+                <div class="media-info">
+                    <li><a href="#"><i class='bx bxl-facebook-circle'></i>Facebook</a></li>
+                    <li><a href="#"><i class='bx bxl-instagram'></i>Instagram</a></li>
+                    <li><a href="#"><i class='bx bxl-twitter'></i>Twitter</a></li>
+                    <li><a href="#"><i class='bx bxl-youtube'></i>Youtube</a></li>
+                    <li><a href=""><i class='bx bxl-linkedin-square'></i>LinkedIn</a></li>
+                </div>
+                <div class="image">
+                    <img src="./images/img3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // reset: trueの場合一度表示された後にスクロールしなおされた際にもう一度スライドさせれる
+        //        falseだと一度スライドさせたら固定される
+        // distance = どの距離からスライドさせるか設定できる
+        // duration: 表示される速さを決めれる
+        ScrollReveal({ reset: false, distance: "60px", duration: 2000 });
+        ScrollReveal().reveal('.main-title, .sec-02 .image, .sec-03 .image', { delay: 200, origin: "left" });
+        ScrollReveal().reveal('.sec-01 .image', { delay: 600, origin: "bottom" });
+        ScrollReveal().reveal('.text-box, .info, .sec-03 .section-title', { delay: 600, origin: "right" });
+        ScrollReveal().reveal('.media-icons i', { delay: 500, origin: "bottom", interval: 200 });
+        ScrollReveal().reveal('.sec-02 .section-title', { delay: 500, origin: "top"});
+        ScrollReveal().reveal('.sec-03 .media-info', { delay: 200, origin: "left"});
+    </script>
+</body>
+
+</html>
