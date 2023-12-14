@@ -7,6 +7,8 @@
     <title>Graphpaper official site</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,47 +18,162 @@
                 <div class="logo">
                     <h3>Graphpaper</h3>
                 </div>
-                <div class="nav web-store">
-                    <p>WEB STORE</p>
-                </div>
-                <div class="nav collections">
-                    <p>COLLECTIONS</p>
-                </div>
-                <div class="nav exhibition">
-                    <p>EXHIBITION</p>
-                </div>
-                <div class="nav news">
-                    <p>NEWS</p>
-                </div>
-                <div class="nav stories">
-                    <p>STORIES</p>
-                </div>
-                <div class="nav concept">
-                    <p>CONCEPT</p>
-                </div>
-                <div class="nav stockist">
-                    <p>STOCKIST</p>
-                </div>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        WEB STORE
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        EXHIBITION
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        NEWS
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        STORIES
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        WEB STORE
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        CONCEPT
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        STOCKIST
+                    </span>
+                </a>
             </div>
             <div class="right">
-                <div class="nav search">
-                    <p>SEARCH</p>
-                </div>
-                <div class="nav account">
-                    <p>ACCOUNT</p>
-                </div>
-                <div class="nav wishilist">
-                    <p>WHISHLIST</p>
-                </div>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        SEARCH
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        ACCOUNT
+                    </span>
+                </a>
+                <a href="#" class="nav">
+                    <span class="nav-content">
+                        WHISHLIST
+                    </span>
+                </a>
                 <a href="#"><i class='bx bxl-instagram'></i></a>
             </div>
         </div>
-    </div>]
-
-    <!-- content1 -->
-    <div class="cont-01">
-        <img src="./images/bg.jpg" alt="">
     </div>
+
+    <!-- main-content -->
+    <!-- 画像の自動再生 -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#">
+                    <img src="images/bg.jpg" class="d-block w-100" alt="">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img src="images/blog1.jpg" class="d-block w-100" alt="">
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="#">
+                    <img src="images/img2.jpg" class="d-block w-100" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- mid-content-->
+    <!-- container-fluidを使用することで画面全体を使用する -->
+    <div class="container-fluid">
+        <div class="row g-lg-5">
+            <!-- left-content -->
+            <div class="left-content col-lg-6">
+                <div class="image">
+                    <img src="images/bg.jpg" class="img-fluid">
+                </div>
+                <h3 class="article-meta">
+                    <span>
+                        NEWS
+                    </span>
+                    <time datetime="2023/12/06 WED">2023/12/06 WED</time>
+                </h3>
+                <h2 class="article-title">
+                    <a href="#" title="">Aerta for Graphpaper 発売のお知らせ</a>
+                </h2>
+            </div>
+            <!-- right content -->
+            <div class="right-content col-lg-6">
+                <div class="image">
+                    <img src="images/bg.jpg" class="img-fluid">
+                </div>
+                <h3 class="article-meta">
+                    <span>
+                        STORIES
+                    </span>
+                    <time datetime="2023/12/06 WED">2023/01/07 SAT</time>
+                </h3>
+                <h2 class="article-title">
+                    <a href="#" title="">構想数年、ついに完成 新定番のアンダーウェア</a>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- section -->
+    <section>
+        <div class="top-collection">
+            <span class="collection-001">
+                "MEN"
+            </span>
+            <span class="collection-002">
+                "WOMEN"
+            </span>
+            <span class="collection-003">
+                "UNISEX"
+            </span>
+            <span class="collection-004">
+                "OBJECTS & FURNITURE"
+            </span>
+        </div>
+    </section>
+
+    <!-- Bootstap Grid -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- View ALL -->
+    <div class="top-collection-viewall">
+        <a href="#">VIEW ALL</a>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

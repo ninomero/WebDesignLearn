@@ -8,7 +8,7 @@
 }
 
 .navbar {
-    display: flex;
+    display: flex;  
     justify-content: space-between;
 }
 
@@ -19,9 +19,23 @@
 }
 
 .nav {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
     padding: 10px 20px;
     font-size: 10px;
     font-weight: 550;
+    position: relative;
+}
+
+.nav span {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 /* Graphpaper title */
@@ -31,17 +45,23 @@
     padding-right: 10px;
 }
 
-/* header instagram icon */
-.right a {
-    padding: 8px 20px;
+.bx {
+    color: black;
 }
 
-.navbar p {
-    text-align: center;
+time {
+    color: rgb(173,177,186);
+    font-size: 0.8rem;
 }
 
+.article-meta span{
+    font-size: 0.9rem;
+    margin-right: 10px;
+    padding-top: 10px;
+}
 
-.cont-01 {
-    /* background-position: center; */
-    /* background-size: cover; */
+.article-title a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
 }
