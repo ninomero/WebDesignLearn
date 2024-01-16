@@ -108,15 +108,21 @@ time {
 
 .item {
     position: relative;
+    margin: auto;
+}
+
+img {
+    width: 40vh;
+    height: 50vh;
+    margin: auto;
 }
 
 .item .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 40vh;
     height: 100%;
-    background-color: rgba(37, 39, 71, 0.7);
     padding: 30px;
     display: flex;
     align-items: flex-end;
@@ -124,13 +130,50 @@ time {
     /* ↓カーソルを合わせた際に商品説明が出るようにするコード */
     opacity: 0;
     transition: all 0.4s ease;
+
 }
 
-img {
+/* ホバーした際の服のブランド名と価格をまとめているブロック */
+.bland {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
     width: 100%;
-
+    justify-content: space-between;
 }
+
+/* 服のブランド名 */
+.bland-title {
+    margin-top: auto;
+    margin-right: 10px;
+    width: 100%;
+}
+
+/* 服の価格 */
+.bland-price {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    right: 0;
+    white-space: nowrap;
+}
+
+.bland-title h4 {
+    margin-right: 10px;
+}
+
+.bland-title .bland-price {
+    bottom: 0;
+}
+
+.bland-title .bland-price span {
+    bottom: 0;
+}
+
 
 .item:hover .overlay {
     opacity: 1;
+    bottom: 0;
 }
