@@ -66,9 +66,11 @@ time {
     font-size: 1.2rem;
 }
 
+/* ***************************************************** */
+/* MEN WOMEN UNISEX OBJECT... */
 .mid-section {
     text-align: center;
-    margin: 200px 0;
+    margin: 200px 0 100px;
 }
 
 .mid-section span {
@@ -77,7 +79,6 @@ time {
     font-size: 16px;
     position: relative;
     display: inline-block;
-    /* text-decoration: none; */
 }
 
 .mid-section span::after {
@@ -99,6 +100,7 @@ time {
 }
 
 .mid-section span:hover:after {
+    /* scale(x軸の拡大率, y軸の拡大率) */
     transform: scale(.6, 1);
 }
 
@@ -106,31 +108,46 @@ time {
     margin: 0 30px;
 }
 
+/* ***************************************************** */
+.item-list {
+    width: 100%;
+    height: 100%;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
 .item {
     position: relative;
     margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 img {
-    width: 40vh;
-    height: 50vh;
+    width: 100%;
+    height: 100%;
     margin: auto;
 }
 
+/* ホバーした際の設定 */
 .item .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 40vh;
+    width: 100%;
     height: 100%;
     padding: 30px;
     display: flex;
     align-items: flex-end;
-
     /* ↓カーソルを合わせた際に商品説明が出るようにするコード */
     opacity: 0;
     transition: all 0.4s ease;
+}
 
+/* カーソルがあった際にブランド名、価格を表示するように設定 */
+.item:hover .overlay {
+    opacity: 1;
+    bottom: 0;
 }
 
 /* ホバーした際の服のブランド名と価格をまとめているブロック */
@@ -146,34 +163,49 @@ img {
 /* 服のブランド名 */
 .bland-title {
     margin-top: auto;
+    margin-left: 15px;
     margin-right: 10px;
     width: 100%;
 }
 
 /* 服の価格 */
 .bland-price {
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: 20px;
-    margin-bottom: 5px;
+    margin: auto 20px 8px auto;
     right: 0;
+    /* 余白の設定(いらないかもしれない) */
     white-space: nowrap;
+    font-size: 13px;
+    bottom: 0;
 }
 
-.bland-title h4 {
+/* ブランド名の表示を設定している */
+.bland-title p {
     margin-right: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
 }
 
-.bland-title .bland-price {
-    bottom: 0;
+/* ***************************************************** */
+.top-collection-viewall {
+    text-align: center;
+    margin: 100px 0;
+}
+.top-collection-viewall a{
+    /* 枠のふちを作成 */
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 15px 25px;
+    transition: .5s;
+    text-decoration: none;
+    font-size: 12px;
 }
 
-.bland-title .bland-price span {
-    bottom: 0;
-}
-
-
-.item:hover .overlay {
-    opacity: 1;
-    bottom: 0;
+.top-collection-viewall a:hover {
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
 }
