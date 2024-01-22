@@ -235,3 +235,15 @@ img {
 .footer-content {
     justify-content: center;
 }
+
+/*  */
+/* タイトル画像の縮小をAPIを使用して実現 */
+.carousel-item {
+    transform: scale(1.3);
+}
+
+.carousel-item.active-1 {
+    transform: scale(1.0);
+    transition: 0.5s ease-out;
+}
+
