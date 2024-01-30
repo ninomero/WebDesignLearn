@@ -73,19 +73,29 @@ header .container .row nav>ul {
 }
 
 .btn {
-    display: inline-block;
+    display: flex;
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     line-height: 1;
     z-index: 1;
     background-color: #ffff;
     color: black;
     /* 枠の丸み */
-    border-radius: 4.15em;
+    border-radius: 4.05em;
+
+    
 
     /* ホバーした際の速度 */
     transition: .5s;
+
+    /* サイズ調整 */
+    padding: 0.83em 2.085em 0.91em;
+    /* justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: auto;
+    padding: 0 1.65rem; */
 }
 
 /*  */
@@ -120,9 +130,9 @@ header .container .row nav>ul {
 
 /* title */
 .hero .title-wrap {
-    align-items: center;
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     margin-bottom: -35rem;
     /* mi-heighでタイトルを表示する箇所を設定している */
@@ -164,6 +174,20 @@ h1 {
     padding-bottom: 100px;
 }
 
+/*  More About Manner */
+.hero .container .row a.btn{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+/* .hero .container .row a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} */
 /************************************************************************************************/
 /* footer全体の設定 */
 footer {
@@ -192,12 +216,7 @@ footer .container:first-child .row .left-col {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-}
-
-/* linkedin instagram などの枠 */
-footer .container:first-child .row .left-col .contact ul {
-    display: flex;
-    gap: 1rem;
+    padding-left: 10px;
 }
 
 footer .container:first-child .row .left-col .footer-nav {
@@ -205,4 +224,114 @@ footer .container:first-child .row .left-col .footer-nav {
     font-size: 1.5rem;
     gap: 6rem;
     line-height: 2;
+}
+
+/* containerクラスの最初の要素 */
+/* 文字:Contact */
+footer .container:first-child .row .left-col .contact h2 {
+    /* em:親要素の値が反映される単位(親の文字サイズが18pxの場合,1em = 18pxとなる) */
+    /* サイズを指定していない場合、デフォルト値である16px = 1emとなる */
+    /* remはroot em の意味でありhtmlタグに記載されたpxを基準としする相対的に値が変わる */
+    margin-bottom: 0.4em;
+    font-size: 2.1rem;
+    font-weight: 400;
+
+}
+
+/* 文字:91 Wimpole Street, London WIG 0EF< */
+footer .container:first-child .row .left-col .contact p {
+    margin-bottom: 2rem;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+/* svgとメルアド記載の箇所 */
+footer .container:first-child .row .left-col .contact ul {
+    display: flex;
+    gap: 1rem;
+    color: #ffff;
+}
+
+/* 文字:linkedin instagram などの枠 */
+footer .container:first-child .row .left-col .contact ul li a {
+    /* 主軸方向(通常は横) */
+    justify-content: center;
+    /* 交差方向(通常は縦) */
+    align-items: center;
+    background-color: #efe3de;
+    border-radius: 100%;
+    clip-path: inset(-1px -1px -1px -1px round 4.15rem);
+    color: #353535;
+    display: flex;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* 行BOXの高さ */
+    line-height: 1;
+    position: relative;
+    transition: background .15s ease 0s;
+    
+    z-index: 1;
+}
+
+/* メルアド設定(header部分と同じbtnクラス使用※継承されているかは確認必要)  */
+footer .container:first-child .row .left-col .contact ul li a.btn {
+    /* 幅調整 */
+    width: auto;
+    border-radius: 4.5rem;
+    /* 要素のどの部分を表示するかを設定する */
+    /* 内部の長方形を定義する */
+    clip-path: inset(-1px -1px -1px -1px round 4.5rem);
+    font-size: 1.2rem;
+    height: 2.5em;
+    padding: 0 1.65em;
+}
+
+/* 右側のsign up */
+footer .container:first-child .row .sign-up {
+    width: 29rem;
+}
+
+/*  Sign up to our~~~~~ */
+footer .container:first-child .row .sign-up p {
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+
+/* form */
+footer .container:first-child .row .sign-up form {
+    position: relative;
+    margin-top: 1.9rem;
+}
+
+
+/* email打ち込む箇所 */
+footer .container:first-child .row .sign-up form input {
+    background: #efe3de;
+    border-radius: 4rem;
+    color: #353535;
+    font-size: 0.9rem;
+    padding-bottom: 0.15rem;
+    padding-left: 1.5rem;
+    padding-right: 1.75rem;
+    width: 100%;
+
+    /* フレキシブルにする */
+    height: 2.5rem;
+}
+
+/* submit btn */
+footer .container:first-child .row .sign-up form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #353535;
+    color: #efe3de;
+    border-radius: 100%;
+    cursor: pointer;
+    height: 1.9rem;
+    right: 0.8rem;
+    width: 1.9rem;
+    top: 14%;
 }
