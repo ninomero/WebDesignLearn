@@ -21,6 +21,10 @@ body {
     font-size: 10px;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 /* リンク */
 a {
     color: black;
@@ -34,29 +38,80 @@ ul {
     list-style: none;
 }
 
+/* 文字の太さ */
+h1 {
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.085;
+    font-size: 4.4rem;
+}
+
 /************************************************************************************************/
 /* header部分の作成 */
 header {
-    padding-top: 3.5rem;
     left: 0;
     top: 0;
     position: fixed;
     width: 100%;
     height: 100%;
+    padding-top: 3.5rem;
 }
+
+/* headerがスクロールしたら隠れる */
+
+/* 上に上がる動き */
+#header.UpMove {
+    /* UpAnime = アニメーション名 */
+    /* ease-in-out = アニメーション開始終了を滑らかにする */
+    /* 0.5s = 開始までの秒数 */
+    /* forwards = 終了時の状態を維持する */
+    /* 指定の順番は特にありませんが、durationとdelayについては先に記述した数値がdurationとなるので注意する */
+    animation: UpAnime ease-in-out 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+        /* transition: 0.5s ease-in-out; */
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+        /* transition: 0.5s ease-in-out; */
+    }
+}
+
+/* 下に下がる動き */
+#header.DownMove {
+    animation: DownAnime ease-in-out .5s forwards;
+}
+
+@keyframes DownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+        /* transition: 0.5s ease-in-out; */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* transition: 0.5s ease-in-out; */
+    }
+}
+
 .desktop .container {
     margin: 0 auto;
     width: 100%;
 }
 
 header .container .row {
-    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: relative;
+    align-items: center;
     padding: 0 4rem;
-    margin-right: 0;
+    margin: auto;
 }
 
 header .container .row .transition {
@@ -69,7 +124,6 @@ header .container .row nav>ul {
     display: flex;
     font-size: 1.2rem;
     gap: 1em;
-    
 }
 
 .btn {
@@ -80,25 +134,18 @@ header .container .row nav>ul {
     line-height: 1;
     z-index: 1;
     background-color: #ffff;
-    color: black;
+    color: #353535;
     /* 枠の丸み */
     border-radius: 4.05em;
-
-    
 
     /* ホバーした際の速度 */
     transition: .5s;
 
     /* サイズ調整 */
-    padding: 0.83em 2.085em 0.91em;
-    /* justify-content: center;
-    align-items: center;
-    height: 2.5rem;
-    width: auto;
-    padding: 0 1.65rem; */
+    padding: 0.83em 1.085em 0.91em;
 }
 
-/*  */
+/* ボタンの疑似要素 */
 /* .btn::before {
     content: "";
     position: absolute;
@@ -131,22 +178,15 @@ header .container .row nav>ul {
 /* title */
 .hero .title-wrap {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin-bottom: -35rem;
     /* mi-heighでタイトルを表示する箇所を設定している */
     min-height: 100vh;
     padding: 0 250px 13rem;
 }
 
-/* 文字の太さ */
-h1 {
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1.085;
-    font-size: 4.4rem;
-}
 .hero h1 {
     width: 100%;
 }
@@ -172,6 +212,7 @@ h1 {
 
 .hero .row {
     padding-bottom: 100px;
+    
 }
 
 /*  More About Manner */
@@ -179,23 +220,17 @@ h1 {
     width: 30%;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    margin: auto;
 }
 
-/* .hero .container .row a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-} */
 /************************************************************************************************/
 /* footer全体の設定 */
 footer {
-    padding: 3.5rem 0;
-    /* background-color: black; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 3.5rem 0;    
     min-height: 100vh;
 }
 
@@ -254,15 +289,15 @@ footer .container:first-child .row .left-col .contact ul {
 
 /* 文字:linkedin instagram などの枠 */
 footer .container:first-child .row .left-col .contact ul li a {
+    display: flex;
     /* 主軸方向(通常は横) */
     justify-content: center;
     /* 交差方向(通常は縦) */
     align-items: center;
+    color: #353535;
     background-color: #efe3de;
     border-radius: 100%;
     clip-path: inset(-1px -1px -1px -1px round 4.15rem);
-    color: #353535;
-    display: flex;
     font-size: 1.2rem;
     height: 2.5rem;
     width: 2.5rem;
@@ -270,7 +305,6 @@ footer .container:first-child .row .left-col .contact ul li a {
     line-height: 1;
     position: relative;
     transition: background .15s ease 0s;
-    
     z-index: 1;
 }
 
@@ -278,12 +312,12 @@ footer .container:first-child .row .left-col .contact ul li a {
 footer .container:first-child .row .left-col .contact ul li a.btn {
     /* 幅調整 */
     width: auto;
+    height: 2.5em;
+    font-size: 1.2rem;
     border-radius: 4.5rem;
     /* 要素のどの部分を表示するかを設定する */
     /* 内部の長方形を定義する */
     clip-path: inset(-1px -1px -1px -1px round 4.5rem);
-    font-size: 1.2rem;
-    height: 2.5em;
     padding: 0 1.65em;
 }
 
@@ -307,14 +341,15 @@ footer .container:first-child .row .sign-up form {
 
 /* email打ち込む箇所 */
 footer .container:first-child .row .sign-up form input {
-    background: #efe3de;
-    border-radius: 4rem;
     color: #353535;
+    background-color: #efe3de;
+    border-radius: 4rem;
     font-size: 0.9rem;
+    width: 100%;
     padding-bottom: 0.15rem;
     padding-left: 1.5rem;
     padding-right: 1.75rem;
-    width: 100%;
+    
 
     /* フレキシブルにする */
     height: 2.5rem;
