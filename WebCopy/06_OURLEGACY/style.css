@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100;500;700&display=swap');
+
+/* グローバル変数 */
+:root {
+    --primary: #fff;
+}
+
+/* デフォルト値 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+    color: #353535;
+}
+
+/* 本体 */
+body {
+    background-color: #FFFFFC;
+    font-size: 12px;
+}
+
+/* aタグ  */
+a {
+    color: #353535;
+    text-decoration: none;
+    letter-spacing: 0;
+}
+
+/* ulタグ */
+ul {
+    list-style: none;
+}
+
+/* 文字の太さ */
+h1 {
+    font-weight: 700;
+    font-size: 3.3em;
+    letter-spacing: 0;
+    line-height: 1.085;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 2.8em;
+    letter-spacing: 0;
+    line-height: 1.085;
+}
+
+/************************************************************************************************/
+/* header */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    left: auto;
+    right: 0;
+
+}
+
+/* メニューボタンのスタイル */
+.nav .left-content .menu-button {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* メニューバーのスタイル */
+.nav .left-content .menu-button .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #333;
+    transition: 0.4s;
+}
+
+.nav .right-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 35px 0 20px;
+}
+
+.nav .right-content .icon {
+    width: 100%;
+    height: 100%;
+    margin: 0 5px;
+    /* 背景を透明にする */
+    background-color: transparent;
+    border: 0;
+}
+
+
+/************************************************************************************************/
+/* main-contents */
+.content-01{
+    min-height: 810px;
+    position: relative;
+    isolation: isolate;
+}
+
+.title-block {
+    padding: 40px;
+}
+
+.title-block .title:first-child h1{
+    margin-bottom: 40px;
+}
+
+.title-block .sub-title .arrive{
+    padding-left: 40px;
+}
+
+/* MENS-MOVIE */
+.css-6clmz9 {
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.content-02{
+    min-height: 810px;
+    position: relative;
+    isolation: isolate;
+}
+
+.content-02 .title-block {
+    display: flex;
+    width: 100%;
+    height: 810px;
+}
+
+.content-02 .title-block .sub-title {
+    width: 100%;
+    height: 100%;
+}
+
+/* jsいじる */
+.content-02 .title-block .sub-title .category-title {
+    position: sticky;
+    top: 0;
+}
+
+.content-02 .right-img {
+    display: block;
+    position: relative;
+    width:  100%;
+    height: 100%;
+}
+
+.content-02 .right-img img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100x;
+    
+    
+}
+.footer {
+    padding: 40px calc(100vw / 24);
+    padding-top: calc(40 * 3);
+    padding-bottom: 16px;
+}
+
+.footer .footer-contents {
+    display: grid;
+    grid-gap: 40px 0;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    /* flexの状態にしている? */
+    /* gridレイアウトで横方向に何個並べれるかを指定している */
+    /* repeat(繰り返しの回数, 繰り返す値) */
+    /* 繰り返しの値をauto-fitにすると横幅に入るだけ配置するという意味になる */
+    /* fr単位はfractionの略で比率ということになる */
+    grid-template-columns: repeat(22, 1fr);
+}
+
+.footer .footer-contents .footer-nav:nth-of-type(1) {
+    display: grid;
+    grid-gap: 4px;
+    grid-column: 1/9;
+}
+
+.footer .footer-contents .footer-nav:nth-of-type(2) {
+    display: grid;
+    grid-gap: 4px;
+    grid-column: 10/16;
+}
+
+.footer .footer-contents .right-footer {
+    grid-column: 17/-1;
+}
+
+.footer .footer-contents .right-footer button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+    text-underline-offset: 0.1em;
+}
+
+.footer h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+    color: black;
+}
+
+/************************************************************************************************/
+.f-nav {
+    display: none;
+    grid-template-columns: repeat(22, 1fr);
+    grid-gap: 40px;
+    padding: 20px 30px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overscroll-behavior: contain;
+    position: fixed;
+    z-index: -1;
+    inset: 0px;
+    top: 81px;
+    width: auto;
+    height: 810px;
+    background-color: #fff;
+
+}
+
+.f-nav .main-nav {
+    grid-column: 1/span 10;
+}
+
+.f-nav .main-nav .sub-nav-01,
+.f-nav .main-nav .sub-nav-02 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.f-nav .main-nav .sub-nav-01 {
+    padding-left: 11px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.f-nav .main-nav .sub-nav-02 {
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.f-nav .main-nav .right-nav {
+    /* display: inherit;
+    position: relative;
+    width:  inherit;
+    height: inherit; */
+}
+
+.f-nav .right-nav {
+    grid-column: 13/-1;
+}
+
+.f-nav .right-nav img {
+    object-fit: cover;
+    max-width: 42vh;
+    max-height: 60vh;
+    height: 100%;
+}
+
+.main-content-appear {
+    z-index: 1;
+    display: grid;
+}
+
+.main-content-disappear {
+    z-index: -1;
+    display: none;
+}
