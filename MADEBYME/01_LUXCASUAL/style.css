@@ -1,0 +1,72 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+/*******************************************************/
+.site-container {
+    position: relative;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100px;
+}
+
+.home-top-marquee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 5rem;
+    align-items: center;
+}
+
+.marquee {
+    width: 100%;
+    --marquee-gap: 1rem;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--marquee-gap);
+}
+
+.textsize-medium {
+    font-size: clamp(18px, 1.4vw, 26px);
+    line-height: 1.7;
+}
+
+.marquee.enable-animation .marquee-content {
+    animation: scroll 35s linear infinite;
+}
+
+.marquee .marquee-content {
+    /* flexコンテナは要素のサイズが自動で縮小されたりするが0を指定することにより縮小するのを防いでいる */
+    flex-shrink: 0;
+    display: flex;
+    /* flexアイテムの両側に均等な余白をつける */
+    justify-content: space-around;
+    gap: var(--marquee-gap);
+    min-width: 100%;
+    /* will-changeを多用するとレイヤーを過剰に作成することになるため、パフォーマンスが低下する */
+    /* animationをすらすら動くようにしている(内部的な動きではレイヤーを分離して最適化を行っている) */
+    will-change: transform;
+}
+
+/* アニメーション定義 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - var(--marquee-gap)));
+    }
+
+}
