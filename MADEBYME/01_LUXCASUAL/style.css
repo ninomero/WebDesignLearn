@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100;500;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
 }
 
 a {
@@ -149,4 +155,80 @@ ul {
 
 .main-contents .main-search a:hover {
     color: brown;
+}
+
+/*******************************************************/
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin: 30px 30px;
+}
+
+.container .row {
+    display: grid;
+}
+
+.container .row .item-list {
+    display: grid;
+    grid-column: 1/span 2;
+    width: 100%;
+    height: 100%;
+    margin: 2px 2px;
+}
+
+.item-list .item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.item-list .item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.item-list .item:hover .overlay {
+    opacity: 1;
+    bottom: 0;
+}
+
+.item-list .item .overlay .bland {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.item-list .item .overlay .bland .bland-title{
+    margin: auto 10px 0 15px;
+    right: 0;
+    bottom: 0;
+    white-space: nowrap;
+    font-size: 13px;
+}
+.item-list .item .overlay .bland .bland-title p {
+    margin-right: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.item-list .item .overlay .bland .bland-price {
+    margin: auto 20px 8px auto;
+    right: 0;
+    /* 余白の設定(いらないかもしれない) */
+    white-space: nowrap;
+    font-size: 13px;
+    bottom: 0;
 }
