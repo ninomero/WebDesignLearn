@@ -226,14 +226,14 @@ svg {
     bottom: -10px;
     /* アンダーラインを各メニューの左端に設定 */
     left: 0;
-    width: 100%;
+    width: 10%;
     /* アンダーラインの高さ(太さ) */
     height: 1px;
     /* アンダーラインの色 */
     background: white;
     transform: scale(0, 1);
     /* 真ん中を原点としてアンダーラインを出現させる */
-    transform-origin: center top;
+    transform-origin: left top;
     transition: transform .3s;
 }
 
