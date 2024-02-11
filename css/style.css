@@ -125,7 +125,30 @@ svg {
 }
 
 .nav-bar .nav-bar-icon ul li {
+    position: relative;
     padding: 10px;
+}
+
+.nav-bar .nav-bar-icon ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    /* アンダーラインを各メニューの左端に設定 */
+    left: 0;
+    width: 100%;
+    /* アンダーラインの高さ(太さ) */
+    height: 1px;
+    /* アンダーラインの色 */
+    background: white;
+    transform: scale(0, 1);
+    /* 真ん中を原点としてアンダーラインを出現させる */
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.nav-bar .nav-bar-icon ul li:hover:after {
+    /* scale(x軸の拡大率, y軸の拡大率) */
+    transform: scale(.6, 1);
 }
 
 /*******************************************************/
@@ -157,6 +180,7 @@ svg {
 
 .sub-contents .sub-contents-in .sub-contents-clm {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
