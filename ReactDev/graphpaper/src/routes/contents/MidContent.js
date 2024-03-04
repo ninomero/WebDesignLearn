@@ -8,7 +8,7 @@ const MidContent = () => {
         {/* left-content */}
         <div class="left-content col-lg-6">
           <div class="image">
-            <img src="images/bg.jpg" class="img-fluid" />
+            <img src="./assets/bg.jpg" class="img-fluid" />
           </div>
           <h3 class="article-meta">
             <span>NEWS</span>
@@ -23,7 +23,7 @@ const MidContent = () => {
         {/* right content */}
         <div class="right-content col-lg-6">
           <div class="image">
-            <img src="images/bg.jpg" class="img-fluid" />
+            <img src="./assets/bg.jpg" class="img-fluid" />
           </div>
           <h3 class="article-meta">
             <span>STORIES</span>

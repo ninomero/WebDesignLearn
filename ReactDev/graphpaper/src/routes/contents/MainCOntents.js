@@ -1,28 +1,37 @@
-import React from 'react'
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 
-const MainCOntents = () => {
+const MainContents = () => {
   return (
     // 画像の自動再生
-    <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <a href="#">
-                    <img src="images/bg.jpg" class="d-block w-100" alt="" />
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="#">
-                    <img src="images/blog1.jpg" class="d-block w-100" alt="" />
-                </a>
-            </div>
-            <div class="carousel-item">
-                <a href="#">
-                    <img src="images/img2.jpg" class="d-block w-100" alt=""> /</img>
-                </a>
-            </div>
-        </div>
-    </div>
-  )
-}
+    <>
+     <Carousel data-bs-theme="dark">
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="./assets/bg.jpg"
+          alt="First slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="./assets/blog1.jpg"
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="./assets/img2.jpg"
+          alt="Third slide"
+        />
+      </Carousel.Item>
+    </Carousel>
+    </>
+    
+  );
+};
 
-export default MainCOntents
+
+export default MainContents;

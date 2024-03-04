@@ -249,7 +249,7 @@ img {
 
 /* subImage */
 .image {
-    transform: scale(1.3);
+    transform: scale(0.9);
 }
 
 .image.active-1{

@@ -7,7 +7,7 @@ const Items = () => {
             <div class="item-list col-sm-6 col-lg-3">
                 <a href="">
                     <div class="item">
-                        <img src="./images/cloth1.png" alt="" />
+                        <img src="./assets/cloth1.png" alt="" />
                         <div class="overlay">
                             <div class="bland">
                                 <div class="bland-title">
@@ -31,7 +31,7 @@ const Items = () => {
             <div class="item-list col-sm-6 col-lg-3">
                 <a href="">
                     <div class="item">
-                        <img src="./images/cloth1.png" alt="" />
+                        <img src="./assets/cloth1.png" alt="" />
                         <div class="overlay">
                             <div class="bland">
                                 <div class="bland-title">
