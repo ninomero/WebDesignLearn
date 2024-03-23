@@ -1,19 +1,18 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
 
-const TextInput = (props) => {
+const TextInput = ({fullWidth, label, multiline, required, rows, value, type, onChange}) => {
     return (
         <TextField 
-            fullWidth={props.fullWidth}
-            label={props.label}
+            fullWidth={fullWidth}
+            label={label}
             margin="dense"
-            multiline={props.multiline}
-            required={props.required}
-            rows={props.rows}
-            value={props.value}
-            type={props.type}
-            onChange={props.onChange}
-
+            multiline={multiline}
+            required={required}
+            rows={rows}
+            value={value}
+            type={type}
+            onChange={onChange}
             variant="standard"
         />
     )

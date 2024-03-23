@@ -1,11 +1,21 @@
-import React, { useCallback, useState} from 'react'
+import React, { useCallback, useState } from 'react'
 import { PrimaryButton, TextInput } from '../components/UIkit'
+
+// import { BrowserRouter as Router, Link } from "react-router-dom";
+
+// Firebaseのアカウント作成、ログインなどを読み込んでいる
+import { createAccount } from '../firebase';
+
+// リダイレクトかける
+import { useNavigate } from 'react-router-dom';
 
 // グローバル定数を読み込む
 const SignUp = () => {
+    // リダイレクトをかける
+    const navigate = useNavigate();
+
     // useCallback関数を使用して無駄なレンダリングを防いでいる
     // eventはonChangeのイベント時の値が入ってくる
-
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
@@ -13,21 +23,52 @@ const SignUp = () => {
 
     const inputEmail = useCallback((e) => {
         setEmail(e.target.value)
-    },[setEmail]);
+    }, [setEmail]);
 
     const inputPassword = useCallback((e) => {
         setPassword(e.target.value)
-    },[setPassword]);
+    }, [setPassword]);
 
     const inputConfirmPassword = useCallback((e) => {
         setConfirmPassword(e.target.value)
-    },[setConfirmPassword]);
+    }, [setConfirmPassword]);
 
     const inputUsername = useCallback((e) => {
         setUsername(e.target.value)
-    },[setUsername]);
+    }, [setUsername]);
 
     console.log("signUpは呼び出されています")
+
+    const handleClick = async () => {
+        if (
+            username === "" ||
+            email === "" ||
+            password === "" ||
+            confirmPassword === ""
+        ) {
+            alert("必須項目が未入力です");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("パスワードが一致しません。もう一度お試しください。");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("パスワードが一致しません。もう1度お試しください。");
+            return false;
+        }
+        if (password.length < 6) {
+            alert("パスワードは6文字以上で入力してください。");
+            return false;
+        }
+
+        createAccount(email, password);
+
+        // FirebaseにてHttpエラーが発生した際もホームに戻るようになっているので修正する必要あり
+        // navigate("/");
+    }
 
     return (
         <div className='c-section-container'>
@@ -63,8 +104,7 @@ const SignUp = () => {
             <div className="module-spacer--medium" />
             <div className='center'>
                 <PrimaryButton label={"アカウント登録する"}
-                    onClick={() => console.log("aaa")} />
-
+                    onClick={() => handleClick(username, email, password, confirmPassword)} />
             </div>
         </div>
     )
