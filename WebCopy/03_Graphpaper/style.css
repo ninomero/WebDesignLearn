@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+    color: black!important;
+    text-decoration: none!important;
+}
+
+.navbar {
+    display: flex;  
+    justify-content: space-between;
+}
+
+.left, .right {
+    display: flex;
+    margin: 10px 20px;
+    align-items: center;
+}
+
+.nav {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    padding: 10px 20px;
+    font-size: 10px;
+    font-weight: 550;
+    position: relative;
+}
+
+.nav span {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Graphpaper title */
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-right: 10px;
+}
+
+.bx {
+    color: black;
+}
+
+time {
+    color: rgb(173,177,186);
+    font-size: 0.8rem;
+}
+
+.article-meta span{
+    font-size: 0.9rem;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+
+.article-title a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+/* ***************************************************** */
+/* MEN WOMEN UNISEX OBJECT... */
+.mid-section {
+    text-align: center;
+    margin: 200px 0 100px;
+}
+
+.mid-section span {
+    margin: 0px 35px 45px 35px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.mid-section span::after {
+    /* 疑似要素はcontent=''をつける */
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    /* アンダーラインを各メニューの左端に設定 */
+    left: 0;
+    width: 100%;
+    /* アンダーラインの高さ(太さ) */
+    height: 1px;
+    /* アンダーラインの色 */
+    background: #333;
+    transform: scale(0, 1);
+    /* 真ん中を原点としてアンダーラインを出現させる */
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.mid-section span:hover:after {
+    /* scale(x軸の拡大率, y軸の拡大率) */
+    transform: scale(.6, 1);
+}
+
+.collection {
+    margin: 0 30px;
+}
+
+/* ***************************************************** */
+.item-list {
+    width: 100%;
+    height: 100%;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.item {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+/* ホバーした際の設定 */
+.item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    /* ↓カーソルを合わせた際に商品説明が出るようにするコード */
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+/* カーソルがあった際にブランド名、価格を表示するように設定 */
+.item:hover .overlay {
+    opacity: 1;
+    bottom: 0;
+}
+
+/* ホバーした際の服のブランド名と価格をまとめているブロック */
+.bland {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* 服のブランド名 */
+.bland-title {
+    margin-top: auto;
+    margin-left: 15px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+/* 服の価格 */
+.bland-price {
+    margin: auto 20px 8px auto;
+    right: 0;
+    /* 余白の設定(いらないかもしれない) */
+    white-space: nowrap;
+    font-size: 13px;
+    bottom: 0;
+}
+
+/* ブランド名の表示を設定している */
+.bland-title p {
+    margin-right: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* ***************************************************** */
+.top-collection-viewall {
+    text-align: center;
+    margin: 100px 0;
+}
+.top-collection-viewall a{
+    /* 枠のふちを作成 */
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 15px 25px;
+    transition: .5s;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.top-collection-viewall a:hover {
+    border: 1px solid #333;
+    background-color: #333;
+    color: #fff;
+}
+
+/* ***************************************************** */
+.footer-info {
+    margin: 0 10px;
+}
+
+.footer-info-1 {
+    padding-bottom: 10px;
+    margin: 0 10px;
+}
+
+.footer-info-1 h2, a, p{
+    font-size: 10px;
+}
+
+.join {
+}
+
+.footer-content {
+    justify-content: center;
+}
+
+/*  */
+/* タイトル画像の縮小をAPIを使用して実現 */
+.carousel-item {
+    transform: scale(1.3);
+}
+
+.carousel-item.active-1 {
+    transform: scale(1.0);
+    transition: 0.5s ease-out;
+}
+
+/* subImage */
+.image {
+    transform: scale(1.3);
+}
+
+.image.active-1{
+    transform: scale(1.0);
+    transition: 0.5s ease-out;
+}
+

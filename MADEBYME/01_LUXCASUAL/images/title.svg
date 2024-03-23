@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="53.296799mm"
+   height="14.141434mm"
+   viewBox="0 0 53.296799 14.141434"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="title.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.9540685"
+     inkscape:cx="151.65525"
+     inkscape:cy="256.25676"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="114.41847"
+       y="206.49487"
+       width="207.17191"
+       height="184.82983"
+       id="rect187" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-30.707169,-58.288382)">
+    <a
+       id="a583">
+      <text
+         xml:space="preserve"
+         transform="scale(0.26458333)"
+         id="text185"
+         style="white-space:pre;shape-inside:url(#rect187);display:inline;fill:#000000"><tspan
+           x="114.41797"
+           y="273.7505"
+           id="tspan653"><tspan
+             style="font-size:74.6667px;font-family:'Microsoft Sans Serif';-inkscape-font-specification:'Microsoft Sans Serif, Normal'"
+             id="tspan651">TITLE</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.976px;font-family:'Microsoft Sans Serif';-inkscape-font-specification:'Microsoft Sans Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.29432"
+         x="30.465353"
+         y="74.539833"
+         id="text193"
+         transform="matrix(1.0426202,0.00291827,-0.00303649,0.95911354,0,0)"
+         inkscape:transform-center-x="-14.920536"
+         inkscape:transform-center-y="-1.9918106"><tspan
+           id="tspan191"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.8364px;font-family:'Microsoft Sans Serif';-inkscape-font-specification:'Microsoft Sans Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff0000;stroke-width:0.29432"
+           x="30.465353"
+           y="74.539833"
+           sodipodi:role="line">TITLE</tspan></text>
+    </a>
+  </g>
+</svg>

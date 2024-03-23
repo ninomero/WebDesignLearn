@@ -1,0 +1,368 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100;500;700&display=swap');
+
+/* グローバル変数 */
+:root {
+    --dark: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.7;
+    color: white;
+    background: linear-gradient(180deg, #4169e1, #00008d);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+svg {
+    fill: white!important;
+}
+
+/*******************************************************/
+.site-container {
+    position: relative;
+    height: 40px;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.home-top-marquee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+}
+
+.marquee {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+    --marquee-gap: 1rem;
+    gap: var(--marquee-gap);
+}
+
+.textsize-medium {
+    font-size: clamp(18px, 1.4vw, 26px);
+    line-height: 1.7;
+}
+
+.marquee.enable-animation .marquee-content {
+    animation: scroll 35s linear infinite;
+}
+
+.marquee .marquee-content {
+    /* flexコンテナは要素のサイズが自動で縮小されたりするが0を指定することにより縮小するのを防いでいる */
+    flex-shrink: 0;
+    display: flex;
+    /* flexアイテムの両側に均等な余白をつける */
+    justify-content: space-around;
+    gap: var(--marquee-gap);
+    min-width: 100%;
+    /* will-changeを多用するとレイヤーを過剰に作成することになるため、パフォーマンスが低下する */
+    /* animationをすらすら動くようにしている(内部的な動きではレイヤーを分離して最適化を行っている) */
+    will-change: transform;
+}
+
+/* アニメーション定義 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - var(--marquee-gap)));
+    }
+
+}
+
+/*******************************************************/
+.nav-bar {
+    display: flex;
+    width: 100%;
+    height: 13vh;
+    justify-content: space-between;
+}
+
+.nav-bar .title {
+    display: flex;
+    width: 35vh;
+    height: 100%;
+    padding: 30px;
+}
+
+.nav-bar .title h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.nav-bar .nav-bar-icon {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.nav-bar .nav-bar-icon ul {
+    display: flex;
+    margin: 20px 20px;
+}
+
+.nav-bar .nav-bar-icon ul li {
+    position: relative;
+    padding: 10px;
+}
+
+.nav-bar .nav-bar-icon ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    /* アンダーラインを各メニューの左端に設定 */
+    left: 0;
+    width: 100%;
+    /* アンダーラインの高さ(太さ) */
+    height: 1px;
+    /* アンダーラインの色 */
+    background: white;
+    transform: scale(0, 1);
+    /* 真ん中を原点としてアンダーラインを出現させる */
+    transform-origin: center top;
+    transition: transform .3s;
+}
+
+.nav-bar .nav-bar-icon ul li:hover:after {
+    /* scale(x軸の拡大率, y軸の拡大率) */
+    transform: scale(.6, 1);
+}
+
+/*******************************************************/
+.main-contents {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    border-top: 1px solid #2f5adb;
+    border-bottom: 1px solid #2f5adb;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    /* text-align: center; */
+    font-size: 18px;
+    background: #fff;
+    position: relative;
+}
+
+.swiper-slide .site-name {
+    position: absolute;
+    color: white;
+    z-index: 10;
+    left: 50%;
+    top: calc(50% - 36px);
+    /* transform: translate(50%, 300%); */
+    transform: translate(150px, 230px);
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 100%;
+    background: white;
+    opacity: 0.2;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/*******************************************************/
+.sub-contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 20px 20px;
+    gap: 20px;
+    place-items: center;
+}
+
+.sub-contents .sub-contents-in {
+    display: inherit;
+    grid-column: auto;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: #1A1D2C;
+    border-radius: 20px;
+}
+
+.sub-contents .sub-contents-in .sub-contents-clm {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1C2A33;
+    border-radius: 10px;
+}
+
+.sub-contents .sub-contents-in .sub-contents-clm  .sub-contents-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.sub-contents .sub-contents-in .sub-contents-clm  .sub-contents-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    /* アンダーラインを各メニューの左端に設定 */
+    left: 0;
+    width: 100%;
+    /* アンダーラインの高さ(太さ) */
+    height: 1px;
+    /* アンダーラインの色 */
+    background: #475b68;
+}
+
+.sub-contents .sub-contents-in .sub-contents-clm  .sub-contents-list {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    width: 100%;
+    padding: 0 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.sub-contents .sub-contents-in .sub-contents-clm  .sub-contents-list::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    /* アンダーラインを各メニューの左端に設定 */
+    left: 0;
+    width: 23%;
+    /* アンダーラインの高さ(太さ) */
+    height: 1px;
+    /* アンダーラインの色 */
+    background: white;
+    transform: scale(0, 1);
+    /* 真ん中を原点としてアンダーラインを出現させる */
+    transform-origin: left top;
+    transition: transform .3s;
+}
+
+.sub-contents .sub-contents-in .sub-contents-clm  .sub-contents-list:hover:after {
+    /* scale(x軸の拡大率, y軸の拡大率) */
+    transform: scale(.6, 1);
+}
+
+.sub-contents .sub-contents-in .sub-contents-clm .sub-contents-search {
+    margin: 20px 0;
+    padding: 5px 20px;
+    background: #4169e1;
+    border-radius: 20px;
+}
+
+/* 背景色にぼかし入れようと思ったがあまり意味ないことに気づいた */
+/* .sub-contents .sub-contents-in .sub-contents-clm  .sub-contents-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    filter: blur(6px);
+    z-index: 1;
+} */
+
+/*******************************************************/
+.footer {
+    padding: 40px calc(100vw / 24);
+    padding-top: calc(40px * 3);
+    padding-bottom: 16px;
+}
+
+.footer .footer-contents {
+    display: grid;
+    grid-gap: 40px 0;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    /* flexの状態にしている? */
+    /* gridレイアウトで横方向に何個並べれるかを指定している */
+    /* repeat(繰り返しの回数, 繰り返す値) */
+    /* 繰り返しの値をauto-fitにすると横幅に入るだけ配置するという意味になる */
+    /* fr単位はfractionの略で比率ということになる */
+    grid-template-columns: repeat(22, 1fr);
+}
+
+.footer .footer-contents .footer-nav:nth-of-type(1) {
+    display: grid;
+    grid-gap: 4px;
+    grid-column: 1/9;
+}
+
+.footer .footer-contents .footer-nav:nth-of-type(2) {
+    display: grid;
+    grid-gap: 4px;
+    grid-column: 10/16;
+}
+
+.footer .footer-contents .right-footer {
+    grid-column: 17/-1;
+}
+
+.footer .footer-contents .right-footer button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+    text-underline-offset: 0.1em;
+    color: white;
+}
+
+.footer h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+}

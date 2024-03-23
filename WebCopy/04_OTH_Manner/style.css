@@ -1,0 +1,372 @@
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Sora:wght@100;500;700&display=swap');
+
+/* グローバル変数 */
+:root {
+    --primary: #ffff;
+}
+
+/* デフォルト値 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
+    color: white;
+}
+
+/* 本体 */
+body {
+    background-color: #353535;
+    font-size: 10px;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+/* リンク */
+a {
+    color: black;
+    text-decoration: none;
+    letter-spacing: .015em;
+    color: white;
+}
+
+/* ulタグ */
+ul {
+    list-style: none;
+}
+
+/* 文字の太さ */
+h1 {
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.085;
+    font-size: 4.4rem;
+}
+
+/************************************************************************************************/
+/* header部分の作成 */
+header {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-top: 3.5rem;
+}
+
+/* headerがスクロールしたら隠れる */
+
+/* 上に上がる動き */
+#header.UpMove {
+    /* UpAnime = アニメーション名 */
+    /* ease-in-out = アニメーション開始終了を滑らかにする */
+    /* 0.5s = 開始までの秒数 */
+    /* forwards = 終了時の状態を維持する */
+    /* 指定の順番は特にありませんが、durationとdelayについては先に記述した数値がdurationとなるので注意する */
+    animation: UpAnime ease-in-out 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+        /* transition: 0.5s ease-in-out; */
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+        /* transition: 0.5s ease-in-out; */
+    }
+}
+
+/* 下に下がる動き */
+#header.DownMove {
+    animation: DownAnime ease-in-out .5s forwards;
+}
+
+@keyframes DownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+        /* transition: 0.5s ease-in-out; */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* transition: 0.5s ease-in-out; */
+    }
+}
+
+.desktop .container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+header .container .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    margin: auto;
+}
+
+header .container .row .transition {
+    padding-right: 30vh;
+    font-size: 35px;
+}
+
+/* ナビゲーションバー的な個所 */
+header .container .row nav>ul {
+    display: flex;
+    font-size: 1.2rem;
+    gap: 1em;
+}
+
+.btn {
+    display: flex;
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1;
+    z-index: 1;
+    background-color: #ffff;
+    color: #353535;
+    /* 枠の丸み */
+    border-radius: 4.05em;
+
+    /* ホバーした際の速度 */
+    transition: .5s;
+
+    /* サイズ調整 */
+    padding: 0.83em 1.085em 0.91em;
+}
+
+/* ボタンの疑似要素 */
+/* .btn::before {
+    content: "";
+    position: absolute;
+    transform: translateY(100%) translateY(2px);
+    height: calc(100% + 2px);
+
+    background: #353535;
+    height: calc(100% + 2px);
+    left: -1px;
+    pointer-events: none;
+    position: absolute;
+    top: -1px;
+    transform: translateY(100%) translateY(2px);
+    transition: transform .3s ease;
+    width: calc(100% + 2px);
+    z-index: -1;
+} */
+
+/* ホバーした際にテキストの色反転させ、背景を黒にする */
+.btn:hover {
+    background-color: #353535;
+    color: white;
+}
+
+/************************************************************************************************/
+.hero {
+    text-align: center;
+}
+
+/* title */
+.hero .title-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -35rem;
+    /* mi-heighでタイトルを表示する箇所を設定している */
+    min-height: 100vh;
+    padding: 0 250px 13rem;
+}
+
+.hero h1 {
+    width: 100%;
+}
+
+/* 画像サイズの調整 */
+.hero img {
+    display: block;
+    max-inline-size: 100%;
+    margin: 0 -27.5%;
+    max-width: none;
+    width: 155%;
+}
+
+/* 画像下文章 */
+.hero h2 {
+    width: 75%;
+    line-height: 1.28;
+    margin: 0 auto 1.3rem;
+    padding-top: 5rem;
+    font-size: 2.0rem;
+    font-weight: 100;
+}
+
+.hero .row {
+    padding-bottom: 100px;
+    
+}
+
+/*  More About Manner */
+.hero .container .row a.btn{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/************************************************************************************************/
+/* footer全体の設定 */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3.5rem 0;    
+    min-height: 100vh;
+}
+
+/*  */
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 左 右 の枠 */
+footer .container:first-child .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 左枠 */
+footer .container:first-child .row .left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-left: 10px;
+}
+
+footer .container:first-child .row .left-col .footer-nav {
+    display: flex;
+    font-size: 1.5rem;
+    gap: 6rem;
+    line-height: 2;
+}
+
+/* containerクラスの最初の要素 */
+/* 文字:Contact */
+footer .container:first-child .row .left-col .contact h2 {
+    /* em:親要素の値が反映される単位(親の文字サイズが18pxの場合,1em = 18pxとなる) */
+    /* サイズを指定していない場合、デフォルト値である16px = 1emとなる */
+    /* remはroot em の意味でありhtmlタグに記載されたpxを基準としする相対的に値が変わる */
+    margin-bottom: 0.4em;
+    font-size: 2.1rem;
+    font-weight: 400;
+
+}
+
+/* 文字:91 Wimpole Street, London WIG 0EF< */
+footer .container:first-child .row .left-col .contact p {
+    margin-bottom: 2rem;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+/* svgとメルアド記載の箇所 */
+footer .container:first-child .row .left-col .contact ul {
+    display: flex;
+    gap: 1rem;
+    color: #ffff;
+}
+
+/* 文字:linkedin instagram などの枠 */
+footer .container:first-child .row .left-col .contact ul li a {
+    display: flex;
+    /* 主軸方向(通常は横) */
+    justify-content: center;
+    /* 交差方向(通常は縦) */
+    align-items: center;
+    color: #353535;
+    background-color: #efe3de;
+    border-radius: 100%;
+    clip-path: inset(-1px -1px -1px -1px round 4.15rem);
+    font-size: 1.2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* 行BOXの高さ */
+    line-height: 1;
+    position: relative;
+    transition: background .15s ease 0s;
+    z-index: 1;
+}
+
+/* メルアド設定(header部分と同じbtnクラス使用※継承されているかは確認必要)  */
+footer .container:first-child .row .left-col .contact ul li a.btn {
+    /* 幅調整 */
+    width: auto;
+    height: 2.5em;
+    font-size: 1.2rem;
+    border-radius: 4.5rem;
+    /* 要素のどの部分を表示するかを設定する */
+    /* 内部の長方形を定義する */
+    clip-path: inset(-1px -1px -1px -1px round 4.5rem);
+    padding: 0 1.65em;
+}
+
+/* 右側のsign up */
+footer .container:first-child .row .sign-up {
+    width: 29rem;
+}
+
+/*  Sign up to our~~~~~ */
+footer .container:first-child .row .sign-up p {
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+
+/* form */
+footer .container:first-child .row .sign-up form {
+    position: relative;
+    margin-top: 1.9rem;
+}
+
+
+/* email打ち込む箇所 */
+footer .container:first-child .row .sign-up form input {
+    color: #353535;
+    background-color: #efe3de;
+    border-radius: 4rem;
+    font-size: 0.9rem;
+    width: 100%;
+    padding-bottom: 0.15rem;
+    padding-left: 1.5rem;
+    padding-right: 1.75rem;
+    
+
+    /* フレキシブルにする */
+    height: 2.5rem;
+}
+
+/* submit btn */
+footer .container:first-child .row .sign-up form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #353535;
+    color: #efe3de;
+    border-radius: 100%;
+    cursor: pointer;
+    height: 1.9rem;
+    right: 0.8rem;
+    width: 1.9rem;
+    top: 14%;
+}

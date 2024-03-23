@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeaderFixed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar">
+            <h2 class="logo">Relax</h2>
+            <ul class="menu">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">本サイトについて</a></li>
+                <li><a href="#">ブログ</a></li>
+                <li><a href="#">オンライン相談</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="text-area">
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, autem optio! Placeat,
+            explicabo molestias. Maxime explicabo repudiandae a reiciendis pariatur cumque quidem veniam, corporis
+            dolore iure doloremque. Voluptas nam facere quos asperiores voluptatibus sit quia, qui cupiditate
+            obcaecati perferendis repellat maiores sed adipisci non sequi doloremque aperiam optio doloribus
+            molestias! Esse consequuntur nam quibusdam ipsum itaque sequi animi eum optio ad nulla, natus voluptatum
+            veniam, quaerat ut. Ipsam dolorem harum soluta eum nostrum consectetur culpa quasi sit, aut aliquid
+            animi ipsa, pariatur aperiam deleniti facere laudantium. Quibusdam omnis qui iste at quidem, cum harum
+            delectus eos iusto accusantium, facere soluta deleniti enim odio perferendis ipsam veniam neque unde
+            laudantium corporis aspernatur magnam. Repellat dolore necessitatibus debitis velit aut, illum
+            recusandae iure consequuntur, iste itaque eveniet, omnis esse vero corporis veniam consectetur
+            voluptatem! Cupiditate natus laboriosam reiciendis, fugiat ducimus enim delectus dolore quis harum fuga
+            vel amet sed excepturi iste eos.</p>
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, autem optio! Placeat,
+            explicabo molestias. Maxime explicabo repudiandae a reiciendis pariatur cumque quidem veniam, corporis
+            dolore iure doloremque. Voluptas nam facere quos asperiores voluptatibus sit quia, qui cupiditate
+            obcaecati perferendis repellat maiores sed adipisci non sequi doloremque aperiam optio doloribus
+            molestias! Esse consequuntur nam quibusdam ipsum itaque sequi animi eum optio ad nulla, natus voluptatum
+            veniam, quaerat ut. Ipsam dolorem harum soluta eum nostrum consectetur culpa quasi sit, aut aliquid
+            animi ipsa, pariatur aperiam deleniti facere laudantium. Quibusdam omnis qui iste at quidem, cum harum
+            delectus eos iusto accusantium, facere soluta deleniti enim odio perferendis ipsam veniam neque unde
+            laudantium corporis aspernatur magnam. Repellat dolore necessitatibus debitis velit aut, illum
+            recusandae iure consequuntur, iste itaque eveniet, omnis esse vero corporis veniam consectetur
+            voluptatem! Cupiditate natus laboriosam reiciendis, fugiat ducimus enim delectus dolore quis harum fuga
+            vel amet sed excepturi iste eos.</p>
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, autem optio! Placeat,
+            explicabo molestias. Maxime explicabo repudiandae a reiciendis pariatur cumque quidem veniam, corporis
+            dolore iure doloremque. Voluptas nam facere quos asperiores voluptatibus sit quia, qui cupiditate
+            obcaecati perferendis repellat maiores sed adipisci non sequi doloremque aperiam optio doloribus
+            molestias! Esse consequuntur nam quibusdam ipsum itaque sequi animi eum optio ad nulla, natus voluptatum
+            veniam, quaerat ut. Ipsam dolorem harum soluta eum nostrum consectetur culpa quasi sit, aut aliquid
+            animi ipsa, pariatur aperiam deleniti facere laudantium. Quibusdam omnis qui iste at quidem, cum harum
+            delectus eos iusto accusantium, facere soluta deleniti enim odio perferendis ipsam veniam neque unde
+            laudantium corporis aspernatur magnam. Repellat dolore necessitatibus debitis velit aut, illum
+            recusandae iure consequuntur, iste itaque eveniet, omnis esse vero corporis veniam consectetur
+            voluptatem! Cupiditate natus laboriosam reiciendis, fugiat ducimus enim delectus dolore quis harum fuga
+            vel amet sed excepturi iste eos.</p>
+    </div>
+    <script>
+        const menu = document.querySelector(".menu");
+        const navbar = document.querySelector(".navbar");
+        window.addEventListener("scroll", () =>{
+            if(window.pageYOffset >= menu.offsetTop){
+                // stickyクラスをnavbarに追加する
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        })
+    </script>
+
+</body>
+
+</html>

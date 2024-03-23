@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+/*******************************************************/
+.site-container {
+    position: relative;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100px;
+}
+
+.home-top-marquee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 5rem;
+    align-items: center;
+}
+
+.marquee {
+    width: 100%;
+    --marquee-gap: 1rem;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--marquee-gap);
+}
+
+.textsize-medium {
+    font-size: clamp(18px, 1.4vw, 26px);
+    line-height: 1.7;
+}
+
+.marquee.enable-animation .marquee-content {
+    animation: scroll 35s linear infinite;
+}
+
+.marquee .marquee-content {
+    /* flexコンテナは要素のサイズが自動で縮小されたりするが0を指定することにより縮小するのを防いでいる */
+    flex-shrink: 0;
+    display: flex;
+    /* flexアイテムの両側に均等な余白をつける */
+    justify-content: space-around;
+    gap: var(--marquee-gap);
+    min-width: 100%;
+    /* will-changeを多用するとレイヤーを過剰に作成することになるため、パフォーマンスが低下する */
+    /* animationをすらすら動くようにしている(内部的な動きではレイヤーを分離して最適化を行っている) */
+    will-change: transform;
+}
+
+/* アニメーション定義 */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - var(--marquee-gap)));
+    }
+
+}
+
+/*******************************************************/
+.nav {
+    display: flex;
+    position: relative;
+    margin: auto;
+    padding: auto;
+}
+
+.nav .title {
+    width: 100%;
+    height: 100%;
+    max-height: 100px;
+}
+
+.nav .title a img {
+    position: absolute;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding-right: 60vh;
+}
+
+.nav .nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+.nav .nav-right .nav-right-left {
+    width: 100%;
+    height: 100%;
+}
+
+.nav .nav-right .nav-right-left ul li:first-child{
+    padding-bottom: 20px;
+}
+
+.nav .nav-right .nav-right-right {
+    width: 100%;
+    height: 100%;
+}
+
+.nav .nav-right .nav-right-right ul li:first-child {
+    padding-bottom: 20px;
+}
+
+.main-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 800px;
+    background-image: url(images/img_01.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 20px;
+}
+.main-contents .main-contents-title {
+    border: 1px solid #353535;
+    border-width: 2px;
+    font-size: 0.8em;
+}
+
+.main-contents .main-search {
+    margin-top: 10px;
+}
+
+.main-contents .main-search a:hover {
+    color: brown;
+}
+
+/*******************************************************/
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    margin: 30px 30px;
+}
+
+.container .row {
+    display: grid;
+}
+
+.container .row .item-list {
+    display: grid;
+    grid-column: 1/span 2;
+    width: 100%;
+    height: 100%;
+    margin: 2px 2px;
+}
+
+.item-list .item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.item-list .item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.item-list .item:hover .overlay {
+    opacity: 1;
+    bottom: 0;
+}
+
+.item-list .item .overlay .bland {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.item-list .item .overlay .bland .bland-title{
+    margin: auto 10px 0 15px;
+    right: 0;
+    bottom: 0;
+    white-space: nowrap;
+    font-size: 13px;
+}
+.item-list .item .overlay .bland .bland-title p {
+    margin-right: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.item-list .item .overlay .bland .bland-price {
+    margin: auto 20px 8px auto;
+    right: 0;
+    /* 余白の設定(いらないかもしれない) */
+    white-space: nowrap;
+    font-size: 13px;
+    bottom: 0;
+}

@@ -1,0 +1,16 @@
+[補完機能]
+shift + !
+→HTML雛形作成
+
+link;css
+→style.cssのリンク作成
+
+
+
+[ショートカットキー]
+shift + ALT + F
+→リファクタ
+
+shit + ALT + ↓
+→コピー
+
